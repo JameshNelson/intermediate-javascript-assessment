@@ -10,10 +10,10 @@
 
 //         function son(){
 //             var playnintendo = "Mario";
-//         }   
+//         }
 //     }
 
-//     function uncle(){        
+//     function uncle(){
 //         var badjoke = "Har";
 
 //         function cousin(){
@@ -51,6 +51,13 @@ var foo;
   And resolve the promise when setTimeout completes.
 */
 
+async funciton(){
+ return $q()
+
+//}
+
+
+
 
 // #3  ###################
 // # Context 1
@@ -80,17 +87,23 @@ var foo;
 // # Constructor Function
 // Make a constructor function called taco that takes in 3 parameters: shell, meat, veggies and assigns them to identically named properties.
 
+function Taco(shell, meat, veggies){
+  this.shell = shell;
+  this.meat = meat;
+  this.veggies = veggies;
+}
+
 
 
 
 // #7  ###################
 // # Implicit binding
-// Make a constructor function called burrito.  It has a property called percentLeft = 100.  It has a property called eat that is a function.  When eat is invoked it uses context to implicitly subract 25 from the percentLeft on the burrito.
-
+// Make a constructor function called burrito.  It has a property called percentLeft = 100.
+// It has a property called eat that is a function.  When eat is invoked it uses context to implicitly subract 25 from the percentLeft on the burrito.
 
 
 // #8  ###################
-// # Prototype 1 
+// # Prototype 1
 // Add prototype function to the array type that doubles the value of every item in the array
 
 
@@ -106,23 +119,30 @@ var foo;
 // #10  ###################
 // # Closure 1
 // Write a function called sentence machine.  It takes in a parameter called partOne.  It returns a function called sentenceSmasher.
-// When sentenceSmasher is invoked it should take in a parameter called partTwo and return a new string that adds partOne and partTwo together.  
-
+// When sentenceSmasher is invoked it should take in a parameter called partTwo and return a new string that adds partOne and partTwo together.
+var sentenceMachine = function(partOne){
+  return function sentenceSmasher(partTwo){
+    return partOne + partTwo;
+  };
+};
 
 
 // #11  ###################
 // # Closure 2
-// Write a function called subway.  It takes in one parameter called personName.  
+// Write a function called subway.  It takes in one parameter called personName.
 // It needs to keep track of what ingredients the person wants on their sandwhich.
-// It needs to do this by returning a function called addIngredient.  
-// When addIngredient is invoked it saves that ingredient with previously added ingredients and then returns an object that looks like this (Replace the parts wrapped in <> with correct data): 
+// It needs to do this by returning a function called addIngredient.
+// When addIngredient is invoked it saves that ingredient with previously added ingredients and then returns an object that looks like this (Replace the parts wrapped in <> with correct data):
 // ```
 // {
 //     orderPerson: <Person name goes here>,
 //     ingredients: <Array of ingredients goes here>
 // }
 // ```
-
+function subway(personName){
+  var ingredients = [];
+  return function addIngredient()
+}
 
 
 // #12  ###################
@@ -130,4 +150,17 @@ var foo;
 // Write a function that takes in 2 parameters.
 // If both parameters are the same type an the same value return "Exact match".
 // If both parameters have the same value but are different types return "Different types"
-// Otherwise return "Different values" 
+// Otherwise return "Different values"
+var compareValues = function(param1, param2){
+
+  if (param1 === param2){
+    return "Exact match";
+  }
+  else if (param1 == param2){
+    return "Different types";
+  }
+  else
+  return "Different values";
+
+
+}
